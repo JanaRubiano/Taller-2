@@ -1,4 +1,4 @@
-# Taller 1
+# Taller 2
 ### __Desarrollado por: The Bug Hunting Pythons.__
 * Integrantes: Jana Rubiano Hurtado, Samuel Villamizar y Ana Maria De Felipe Briñez. 
 ---
