@@ -221,5 +221,5 @@ if __name__ == "__main__":
     res = vowel_finder(lista)
     print(res)
 ```
-
+8. Desarrollar un programa que dadas dos listas determine que elementos tiene la primer lista que no tenga la segunda lista.
 
