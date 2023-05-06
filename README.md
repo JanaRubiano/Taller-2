@@ -68,7 +68,10 @@ Ahora bien, continuaremos con el siguiente punto.
 4. Diseñar una función que permita calcular una aproximación de la función coseno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Taylor. nota: use math para traer la función coseno y mostrar la diferencia entre el valor real y la aproximación. Con cuántos valores de la serie, se tienen errores del 10%, 1%, 0.1% y 0.001%.
 
 
-![image](https://user-images.githubusercontent.com/124607045/236589006-61eba2f6-d705-48b9-95c3-140f27577b8e.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/124607045/236589006-61eba2f6-d705-48b9-95c3-140f27577b8e.png" alt="Sublime's custom image"/>
+</p>
+
 
 Para comenzar a desarrollar este código debemos comenzar por importar la función math en Python y definir una variable con el valor real de la función coseno. 
 
