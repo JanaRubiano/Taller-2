@@ -197,6 +197,29 @@ if __name__ == "__main__":
 ```
 7. Desarrollar un programa que determine si en una lista se encuentra una cadena de caracteres con dos o más vocales. Si la cadena existe debe imprimirla y si no existe debe imprimir 'No existe'.
 
+Primero se define una lista de cadenas, luego, se define una función que toma una cadena como entrada y devuelve True si la cadena tiene al menos dos vocales y False en caso contrario. Después, se itera sobre cada cadena en la lista usando un bucle for. Dentro del bucle, se llama a la función para verificar si la cadena tiene al menos dos vocales. Si es así, la cadena se imprime y se establece la variable encontrado en True. Finalmente, después del bucle, se verifica si se encontró al menos una cadena con al menos dos vocales. Si no se encontró ninguna cadena, se imprime "No existe".
 
+```python
+def vowel_finder(lista:list) -> list:
+    cadenasConVocales = [] # se crea una lista para guradar las cadenas que tengan más de 2 vocales.
+    for elmt in lista:
+        if type(elmt) == str: # se chequea que el elemento se trate de un string.
+            counter = [char for char in elmt if char in "AEIOUaeiou"] # se guardan las vocales del elemento x en una lista.
+            if len(counter) > 1: # si hay más de una, se añade el elemento a la lista de vocales.
+                cadenasConVocales.append(elmt)
+    if len(cadenasConVocales) == 0: # si no se guradaron elementos en la lista de vocales, se retorna que no existe.
+        return "No existe"
+    else:
+        return cadenasConVocales
+    
+if __name__ == "__main__":
+    lista = []
+    n = int(input("Ingrese el número de elmentos que va a tener la lista: "))
+    for x in range(n):
+        elmt = input("Ingrese un elemento: ")
+        lista.append(elmt)
+    res = vowel_finder(lista)
+    print(res)
+```
 
 
