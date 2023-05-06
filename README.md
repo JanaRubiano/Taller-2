@@ -1,6 +1,13 @@
 # Taller 2
 ### __Desarrollado por: The Bug Hunting Pythons.__
-* Integrantes: Jana Rubiano Hurtado, Samuel Villamizar y Ana Maria De Felipe Briñez. 
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/124607045/236589667-741812cd-a5f3-4fd6-b797-b63bd8582732.png" alt="Sublime's custom image"/>
+</p>
+
+
+* **Integrantes:** Jana Rubiano Hurtado, Samuel Villamizar y Ana Maria De Felipe Briñez. 
+
 ---
 
 Bienvenidos a este repostorio en el cual explicaremos el desarrollo de códigos en Python para resolver problemas planteados en la clase de programación. 
@@ -164,3 +171,6 @@ Ahora bien, continuaremos con el siguiente punto.
 6. Desarrollar un programa que determine si en una lista no existen elementos repetidos.
 
 … 
+
+
+
