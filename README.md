@@ -170,7 +170,20 @@ Ahora bien, continuaremos con el siguiente punto.
 
 6. Desarrollar un programa que determine si en una lista no existen elementos repetidos.
 
-… 
+En este punto es necesario volver a utilizar funciones para determinar elemtos repetidos en una lista. Para ello primero se define la funcion y como variables se trabaja la lista.
+
+En la funcion primero se itera para cada elemto de la lista, con este se guarda en una variable el numero identificado; en el momento en que el numero se repite, el condicional if retorna el valor falso; de lo contrario el ciclo continua hasta finalizar. En el caso que no se repita un elemento de retorna verdadero.
+
+``def elemento_repetido(lista:list)-> bool:
+
+    for elmt in lista: # se itera por cada elemento de la lista.
+        rep = lista.count(elmt) # se gurada el número de veces que éste aparece en la lista.
+        if rep > 1: # si el elemento apareción más de una vez, se retorna False.
+            return False
+        
+    return True
+``
+La segunda parte del codigo es el que aplica la funcion. Primero se define la lista y luego se define el numero de elementos de la lista como n. Despues se itera en el rago de n (es decir la cantidad de elementos que contendra la lista), y se ingresa el valor de cada elemento de la lista. Al final se utiliza la funcion definida en la parte anterior y se imprime falso (si esta repedido un elemento) o verdadero (si no se repite ningun elemento de la lista).
 
 
 
