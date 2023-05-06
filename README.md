@@ -174,7 +174,8 @@ En este punto es necesario volver a utilizar funciones para determinar elemtos r
 
 En la funcion primero se itera para cada elemto de la lista, con este se guarda en una variable el numero identificado; en el momento en que el numero se repite, el condicional if retorna el valor falso; de lo contrario el ciclo continua hasta finalizar. En el caso que no se repita un elemento de retorna verdadero.
 
-``def elemento_repetido(lista:list)-> bool:
+```python
+def elemento_repetido(lista:list)-> bool:
 
     for elmt in lista: # se itera por cada elemento de la lista.
         rep = lista.count(elmt) # se gurada el número de veces que éste aparece en la lista.
@@ -182,8 +183,20 @@ En la funcion primero se itera para cada elemto de la lista, con este se guarda 
             return False
         
     return True
-``
+```
 La segunda parte del codigo es el que aplica la funcion. Primero se define la lista y luego se define el numero de elementos de la lista como n. Despues se itera en el rago de n (es decir la cantidad de elementos que contendra la lista), y se ingresa el valor de cada elemento de la lista. Al final se utiliza la funcion definida en la parte anterior y se imprime falso (si esta repedido un elemento) o verdadero (si no se repite ningun elemento de la lista).
+```python
+if __name__ == "__main__":
+    lista = []
+    n = int(input("Ingrese el número de elmentos que va a tener la lista: "))
+    for x in range(n):
+        elmt = input("Ingrese un elemento: ")
+        lista.append(elmt)
+    res = elemento_repetido(lista)
+    print(res)
+```
+7. Desarrollar un programa que determine si en una lista se encuentra una cadena de caracteres con dos o más vocales. Si la cadena existe debe imprimirla y si no existe debe imprimir 'No existe'.
+
 
 
 
