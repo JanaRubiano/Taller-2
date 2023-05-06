@@ -57,14 +57,14 @@ El siguiente punto del taller, es el numeral 3 que consiste en lo siguiente.
 
 3. Desarrollar un programa que permita ingresar dos números enteros y determinar si se tratan de números espejos.
 
-Este punto del taller lo realizamos, nuevamente definiendo una función con las siguientes instrucciones; primero que todo la función recibirá dos números, convertirá al primero en una string con “str” y usando un slicing, vamos a invertir el número, ya que este nos permite extraer los números de una cadena y este resultado lo compararemos con el segundo número ingresado por el usuario, para comprarlos usaremos el “if”, si estos dos números son iguales la función va a devolver “true” y si no es así, va a devolver “false”. 
+Este punto del taller lo realizamos, nuevamente definiendo una función con las siguientes instrucciones; primero que todo la función recibirá dos números, convertirá al primero en un string con “str”. Usando slicing y recorriendo el string al revés con -1, vamos a invertir el número; este resultado lo compararemos con el otro número ingresado por el usuario, para comprarlos usaremos el “if”, si estos dos números son iguales la función va a devolver “True” y si no es así, va a devolver “False”. 
 
 ```python
 # Ejemplo. 
 if n1 == n2:
-  return true 
+  return True 
 else:
-  return false 
+  return False 
 ```
 **(Revisar archivo adjunto: punto3.py)**
 
@@ -88,7 +88,7 @@ import math
 real = math.cos(x)
 ```
 
-Una vez ya tenemos lo anterior, nuevamente definiremos una función con las siguientes instrucciones: Primero que todo nombraremos variables que consistan en decir “que no se alcanzó a un x porciento de error”, luego,  con “for” y “range” generamos un recorrido para cada número desde el 0 hasta un número n-1, es decir, con el “range” vamos a crear un intervalo de números enteros que comience en 0 y termine en el número ingresado por el usuario (n), este número(n) representa las veces en las cuales se van a repetir las instrucciones que irán después del “for”. 
+Una vez ya tenemos lo anterior, nuevamente definiremos una función con las siguientes instrucciones: Primero que todo nombraremos variables que consistan en decir “que no se alcanzó a un x porciento de error”, luego,  con “for” y “range” generamos un recorrido para cada número desde el 0 hasta un número n, es decir, con el “range” vamos a crear un intervalo de números enteros que comience en 0 y termine en el número ingresado por el usuario (n), este número(n) representa las veces en las cuales se van a repetir las instrucciones que irán después del “for”. 
 
 ```python
 # Ejemplo.
