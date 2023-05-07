@@ -223,3 +223,68 @@ if __name__ == "__main__":
 ```
 8. Desarrollar un programa que dadas dos listas determine que elementos tiene la primer lista que no tenga la segunda lista.
 
+La función listComp toma dos listas como entrada y devuelve una lista que contiene los elementos de la primera lista que no se encuentran en la segunda lista. Primero se crea una lista vacía llamada lista3 para almacenar los elementos de la lista1 que no están en la lista2. Luego, se itera a través de cada elemento de la lista1 usando un bucle for. Si el elemento actual no se encuentra en la lista2, se agrega a la lista3 usando el método append(). Finalmente, se devuelve la lista3.
+```python
+def listComp(lista1:list, lista2:list) -> list:
+
+    lista3 = [] # se crea una lista para guardar los elementos que no sean comunes entre las dos listas.
+    for elmt in lista1: # se itera por la lista1.
+        if elmt not in lista2: # si el elemento de la lista1 no está en la lista2, se agrega a lista3.
+            lista3.append(elmt)
+
+    return lista3
+```
+En la sección principal del programa, se definen dos listas vacías llamadas lista1 y lista2. Luego, se solicita al usuario que ingrese el número de elementos que tendrán ambas listas y se almacena en la variable n. A continuación, se utiliza un bucle for para iterar n veces y solicitar al usuario que ingrese un elemento para la lista1 y la lista2 en cada iteración. Los elementos ingresados se agregan a cada lista respectivamente con el método append(). A continuación, se llama a la función listComp con lista1 y lista2 como argumentos y se almacena el resultado en una variable llamada res. Finalmente, se imprime la lista resultante utilizando la función print().
+```python
+if __name__ == "__main__":
+    lista1 = []
+    lista2 = []
+    n = int(input("Ingrese el número de elmentos que va a tener cada lista: "))
+    for x in range(n):
+        elmt = input("Ingrese un elemento para la lista 1: ")
+        lista1.append(elmt)
+    for x in range(n):
+        elmt = input("Ingrese un elemento para la lista 2: ")
+        lista2.append(elmt)
+    res = listComp(lista1, lista2)
+    print(res)
+```
+9. Resolver el punto 7 del taller 1 usando operaciones con vectores
+
+El programa comienza importando la función prod desde el módulo math, que es utilizada para calcular el producto de todos los números en una lista.
+
+La función stats toma una lista de números como argumento y devuelve una lista de resultados. Dentro de la función, se ordena la lista en orden ascendente y descendente y se almacena en dos variables distintas asc_list y desc_list. Luego, se calcula el promedio de los elementos en la lista y se almacena en una variable st[2]. Para obtener la mediana, se toma el tercer elemento de la lista ordenada en orden ascendente, que es el valor del medio si la lista tiene un número impar de elementos o el promedio de los dos valores del medio si la lista tiene un número par de elementos. Este valor se almacena en la variable st[3].
+
+El promedio multiplicativo se calcula multiplicando todos los elementos en la lista y luego tomando la raíz enésima, donde n es el número de elementos en la lista. Este resultado se almacena en la variable st[4].
+
+Para ordenar la lista en orden ascendente y descendente, se utilizan las funciones sorted y reverse, respectivamente, y se almacenan en st[0] y st[1].
+
+Para obtener el mayor número elevado al menor, se toma el primer y último elemento de la lista ordenada en orden ascendente y se eleva el mayor número a la potencia del menor número. Este resultado se almacena en st[5].
+
+Para obtener la raíz cúbica del menor número, se toma el primer elemento de la lista ordenada en orden ascendente y se eleva a la potencia de 1/3. Este resultado se almacena en st[6].
+
+En la sección principal del programa, se pide al usuario que ingrese 5 números reales y se almacenan en una lista llamada lista. Luego, se llama a la función stats con lista como argumento y se almacena el resultado en una variable res. Finalmente, se imprime el resultado. El resultado incluye la lista ordenada en orden ascendente y descendente, el promedio, la mediana, el promedio multiplicativo, el mayor número elevado al menor y la raíz cúbica del menor.
+
+```python
+from math import prod 
+def stats(lista:list) -> list:
+    st = []
+    asc_list = sorted(lista)
+    desc_list = sorted(lista, reverse=True)
+    
+    st.append(asc_list)
+    st.append(desc_list)
+    st.append(sum(lista)/len(lista))
+    st.append(asc_list[2])
+    st.append(prod(lista)**0.2)
+    st.append(asc_list[-1]**asc_list[0])
+    st.append(asc_list[0]**(1/3))
+    
+    return f"Lista ascendent: {st[0]}\nLista descendente: {st[1]}\nPromedio: {st[2]}\nMediana: {st[3]}\nPromedio multiplicativo: {st[4]}\nMayor elevado al menor: {st[5]}\nRaíz cúbica del menor: {st[6]}"
+
+
+if __name__ == "__main__":
+    lista = [int(input("Ingrese un entero: ")) for n in range(5)]
+    res = stats(lista)
+    print(res)
+```
