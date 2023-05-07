@@ -119,7 +119,7 @@ pct = 100/real*abs(real-aprox) # Variable que calcula el error
 
 Ahora bien, continuaremos con el siguiente punto.
 
-5. Desarrollar un programa que permita determinar el Mínimo Común Múltiplo de dos números enteros. Abordar el problema desde la perspectiva iterativa como recursiva.
+5. Desarrollar un programa que permita determinar el Mínimo Común Múltiplo de dos números enteros.
 
 Y bueno, para desarrollar este punto comenzamos creando una función que calcula los números primos con el fin de luego usarla para calcular el MCM. 
 
