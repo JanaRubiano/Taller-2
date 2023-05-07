@@ -288,3 +288,72 @@ if __name__ == "__main__":
     res = stats(lista)
     print(res)
 ```
+10) Desarrollar un algoritmo que determine si una matriz es mágica. Se dice que una matriz cuadrada es mágica si la suma de cada una de sus filas, de cada una de sus columnas y de cada diagonal es igual.
+
+El algoritmo presentado determina si una matriz cuadrada es mágica o no. Primero, se calcula la suma de cada fila y se guarda en una lista llamada suma_filas. Luego, se calcula la suma de cada columna y se guarda en otra lista llamada suma_columnas. Si alguna de las sumas no coincide con las demás, la función retorna False.
+
+Después, se calculan las sumas de las dos diagonales de la matriz y se comparan con la suma de las columnas. Si alguna de las sumas de las diagonales no coincide con la suma de las columnas, la función retorna False. En caso contrario, la función retorna True, indicando que la matriz es mágica.
+
+La función magicMatrix toma como parámetro una matriz cuadrada representada como una lista de listas. La función devuelve un valor booleano que indica si la matriz es mágica o no.
+
+El código calcula la suma de la diagonal izquierda-derecha: se usa una comprensión de lista para invertir la lista de filas y luego se toman los elementos de cada fila correspondientes a la posición de la diagonal. 
+
+```python
+def magicMatrix(matrix:list) -> bool:
+    m_len = len(matrix)
+    suma_filas = [] # se suman las filas.
+    for i in range(m_len): 
+        lst = matrix[i]
+        suma = 0 # se inicia suma en 0
+        for j in range(m_len):
+            suma += lst[j]
+        if len(suma_filas) == 0: # se agregan los valores de suma a suma_columnas si la lista está vacia, o el valor ya guardado es el mismo.
+            suma_filas.append(suma)
+        elif suma_filas[-1] == suma:
+            suma_filas.append(suma)
+        else:
+            return False
+        
+    suma_columnas = [] # se suman las columnas.
+    for i in range(m_len):
+        suma = 0 # se inicia suma en 0
+        for j in range(m_len):
+            suma += matrix[i][j]
+        if len(suma_columnas) == 0: # se agregan los valores de suma a suma_columnas si la lista está vacia, o el valor ya guardado es el mismo.
+            suma_columnas.append(suma)
+        elif suma_columnas[-1] == suma:
+            suma_columnas.append(suma)
+        else:
+            return False    
+
+    if suma_filas != suma_columnas: # se compara si las listas (que contienen los valores calculados para la suma de cada fila y columna), son iguales.
+        return False # si no son iguales la función retorna False.
+    
+    suma_diagonal1 = 0 # se halla la suma de la diagonal der-izq.
+    shifter = 0
+    for i in range(m_len):
+        suma_diagonal1 += matrix[i][shifter]
+        shifter += 1  
+
+    suma_diagonal2 = sum([row[len(matrix) - 1 - i] for i, row in enumerate(matrix)]) # se halla la suma de la diagonal izq-der (se implementaron técnicas novedosas ya que era practicamente lo mismo que para la otra diagonal).
+
+    for i in range(m_len): # se compara si las listas de las diagonales son iguales a la suma_columnas
+        if suma_columnas[i] != suma_diagonal1 and suma_columnas != suma_diagonal2:
+            return  False
+
+    return True
+    
+
+if __name__ == "__main__":
+    matrix = []
+    n = int(input("Ingrese la dimensión de la matriz (ésta será cuadrada): "))
+    for x in range(n):
+        lista = []
+        for y in range(n):
+            elmt = int(input(f"Ingrese un número para la fila {x+1}: "))
+            lista.append(elmt)
+        matrix.append(lista)
+    res = magicMatrix(matrix)
+
+    print(res)
+```
